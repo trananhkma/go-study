@@ -6,7 +6,7 @@ import "strings"
 // import "math"
 
 func main() {
-	la_biec_30()
+	la_biec_x()
 }
 
 func print_star(x int) {
@@ -83,7 +83,7 @@ func ve_chu_a(x int) int {
 func la_biec_30() {
 	var x int
 	fmt.Scan(&x)
-	ve_chu_x(x)
+	ve_chu_x(x, " ")
 }
 
 func Abs(x int) int {
@@ -93,7 +93,7 @@ func Abs(x int) int {
 	return -x
 }
 
-func ve_chu_x(x int) {
+func ve_chu_x(x int, blank_char string) {
 	upside := x / 2
 	n_upside := 0 - upside
 
@@ -101,7 +101,7 @@ func ve_chu_x(x int) {
 	for i := n_upside; i <= upside; i++ {
 		c_length := 2*Abs(i) + 1
 		nblank := (length - c_length) / 2
-		blanks := strings.Repeat(" ", nblank)
+		blanks := strings.Repeat(blank_char, nblank)
 		output := blanks + "*" + blanks
 		if c_length-2 >= 1 {
 			output = blanks + "*" + strings.Repeat(" ", c_length-2) + "*" + blanks
@@ -131,3 +131,10 @@ func ve_chu_x(x int) {
 // 	}
 //
 // }
+
+// La biec x
+func la_biec_x() {
+	var x int
+	fmt.Scan(&x)
+	ve_chu_x(x, "*")
+}
