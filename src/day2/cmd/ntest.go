@@ -9,11 +9,11 @@ func main() {
 
     fmt.Scan(&ntest)
 
-    for i:=0; i<ntest; i++ {
-        var size, k int;
-        fmt.Scan(&size, &k);
-
-        result := "xxx";
-        fmt.Printf("Test %d: %s", i+1, result);
+    for i := 0; i < ntest; i++ {
+        fmt.Printf("Test %d: %d\n", i+1, _test());
     }
+}
+
+func _test() int {
+    return 0
 }
