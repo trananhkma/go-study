@@ -1,4 +1,4 @@
-package main
+package day5
 
 import (
     "bufio"
@@ -7,7 +7,7 @@ import (
     "regexp"
 )
 
-func main()  {
+func RegexFromFile()  {
     f, err := os.Open("file_name.txt")
     if err != nil {
         fmt.Println(err)

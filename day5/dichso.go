@@ -1,4 +1,4 @@
-package main
+package day5
 
 import (
     "fmt"
@@ -7,12 +7,13 @@ import (
 
 var phatAm, donVi = initMap()
 
-func main() {
+func Dichso() {
     var ntest int
-
+    fmt.Print("Ntest: ")
     fmt.Scan(&ntest)
 
     for i := 0; i < ntest; i++ {
+        fmt.Print("X < 1000ti: ")
         var x string
         fmt.Scan(&x)
         x = cut0(x)
@@ -94,24 +95,29 @@ func dichso (s string) string {
             block = s[star:end]
             first += 3
         }
-        if _, ok := phatAm["normal"][block]; ok {
-            subresult = phatAm["normal"][block]
-        }
-
-        if len(block) == 2 {
+        if value, exist := phatAm["normal"][block]; exist {
+            subresult = value
+        } else if len(block) == 2 {
             subresult = dichBlock2(block)
-        }
-
-        if len(block) == 3 {
+        } else {
             subresult = dichBlock3(block)
         }
-        result += subresult + " " + donVi[level] + " "
+
+        if subresult != "" {
+            subresult += " " + donVi[level] + " "
+        }
+
+        result += subresult
         level--
     }
     return result
 }
 
 func dichBlock2(s string) string {
+    if value, exist := phatAm["right"][s]; exist {
+        return value
+    }
+
     var first = string(s[0])
     var last = string(s[1])
 
@@ -124,8 +130,8 @@ func dichBlock2(s string) string {
         }
     } else {
         first = phatAm["normal"][first] + " mươi "
-        if _, ok := phatAm["right"][last]; ok {
-            last = phatAm["right"][last]
+        if value, exist := phatAm["right"][last]; exist {
+            last = value
         } else {
             last = phatAm["normal"][last]
         }

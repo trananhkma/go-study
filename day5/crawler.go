@@ -1,4 +1,4 @@
-package main
+package day5
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func Crawler() {
 	http.HandleFunc("/crawler", func(response http.ResponseWriter, request *http.Request) {
 		//url := "https://thanhnien.vn/thoi-su/hinh-anh-nguoi-dan-ong-dung-xe-de-di-ve-sinh-giua-duong-cao-toc-gay-phan-no-1037558.html"
 		url, _ := request.URL.Query()["url"]

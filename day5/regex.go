@@ -1,11 +1,11 @@
-package main
+package day5
 
 import (
     "fmt"
     "regexp"
 )
 
-func main() {
+func Regex() {
     var ntest int
     fmt.Print("Ntest: ")
     fmt.Scan(&ntest)

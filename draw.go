@@ -5,7 +5,7 @@ import "strings"
 
 // import "math"
 
-func main() {
+func Draw() {
 	la_biec_x()
 }
 
