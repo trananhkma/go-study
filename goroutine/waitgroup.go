@@ -16,11 +16,11 @@ var Result = []int{}
 var wg sync.WaitGroup
 
 func main() {
-	defer timetrack.Track(time.Now(), "main")
 	SliceA = append_range(SliceA, 100, 1000000)
 	SliceB = append_range(SliceB, 100, 1000000)
 	SliceC = append_range(SliceC, 100, 1000000)
 
+	defer timetrack.Track(time.Now(), "main")
 	wg.Add(3)
 	go GetResult(SliceA)
 	go GetResult(SliceB)
